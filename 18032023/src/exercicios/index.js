@@ -37,6 +37,8 @@ console.log(`O seu semestre da matrícula é: ${semestre}`)
 console.log(`${nome} a sua ordem de matricula é: ${ordem}`)
 */
 
+//Exercicio04
+/*
 let numero01 = parseFloat(prompt(`Informe o primeiro numero: `))
 let numero02 = parseFloat(prompt(`Informe o segundo numero: `))
 let numero03 = parseFloat(prompt(`Informe o terceiro numero: `))
@@ -52,6 +54,70 @@ if (numero01 + numero02 > numero03 && numero02 + numero03 > numero01 && numero03
     } else {
     console.log(`Não é um triângulo`)
     }
+*/
+
+//Exercicio05
+/*
+const vetor = [321, 432, 12, 1, 32 ,32]
+
+vetor.sort()
+for(let i = 0; i < vetor.length; i++) {
+    console.log(vetor[i])
+}
+*/
+
+//Exercicio06
+/*
+let mediaDisciplinas
+
+let nome = String(prompt(`Informe o seu nome: `))
+let portugues = (prompt(`Informe a sua nota na disciplina de português: `))
+let matematica = (prompt(`Informe a sua nota na disciplina de matemática: `))
+let conhecimentoGerais = (prompt(`Informe a sua nota na disciplina de conhecimentos gerais: `))
+
+mediaDisciplinas = (parseFloat(portugues) + parseFloat(matematica) + parseFloat(conhecimentoGerais)) / 3
+console.log(`${nome} a sua média geral é: ${mediaDisciplinas.toFixed(2)}`)
+
+
+if (mediaDisciplinas > 7 && portugues > 5 && matematica > 5 && conhecimentoGerais > 5) {
+    console.log(`${nome} você foi aprovado`)
+} else {
+    console.log(`${nome} você foi reprovado`)
+}
+*/
+
+//Exercicio07
+/*
+let a = parseFloat(prompt(`Informe o valor de A: `))
+let b = parseFloat(prompt(`Informe o valor de B: `))
+let c = parseFloat(prompt(`Informe o valor de C:`))
+
+let soma = a + b
+
+if(soma < c) {
+    console.log(`A soma de A com B é menor que C`)
+} else if (soma > c) {
+    console.log(`A soma de A com B é maior que C`)
+} else {
+    console.log(`A soma de A com B é igual à C`)
+}
+*/
+
+//Exercicio08
+/*
+let contas = String(prompt(`Informe a sua conta: `))
+
+let soma = 0
+
+for(let i = 0; i < contas.toString().length; i++) {
+    soma += parseInt(contas.toString()[i])
+}
+
+let digitoD = soma % 10
+
+let contaCompleta = (`000000` + contas.toString()).slice(-6) + `-` + digitoD.toString();
+console.log(contaCompleta)
+*/
 
 
 
@@ -59,4 +125,15 @@ if (numero01 + numero02 > numero03 && numero02 + numero03 > numero01 && numero03
 
 
 
+/*Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (0 para masculino e 1
+para feminino) e salário. Faça um algoritmo que informe:
+a) a média de salário do grupo;
+b) a maior e a menor idade do grupo;
+c) a quantidade de mulheres com salário até R$100,00.
+Encerre a entrada de dados quando for digitada uma idade negativa
+*/
 
+/*Escreva um programa que leia uma frase e mostre quantas letras “a” ou “A” foram digitadas*/
+
+/*Codifique um programa que leia uma string e mostre se existe a letra ‘j’ nessa string. Caso exista, mostre qual é a posição
+da primeira ocorrência desse caractere*/

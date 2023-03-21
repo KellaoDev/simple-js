@@ -37,21 +37,24 @@ console.log(`O seu semestre da matrícula é: ${semestre}`)
 console.log(`${nome} a sua ordem de matricula é: ${ordem}`)
 */
 
-let numero01 = String(prompt(`Informe o primeiro numero: `))
-let numero02 = String(prompt(`Informe o segundo numero: `))
-let numero03 = String(prompt(`Informe o terceiro numero: `))
+let numero01 = parseFloat(prompt(`Informe o primeiro numero: `))
+let numero02 = parseFloat(prompt(`Informe o segundo numero: `))
+let numero03 = parseFloat(prompt(`Informe o terceiro numero: `))
 
-if(numero01 === numero02 && numero02 === numero03) {
-    console.log(`O triângulo é equilátero`)
-} else if ((numero01 === numero02) ||(numero01 === numero03) || (numero02 == numero03)) {
-    console.log(`O triângulo é isóscele`)
-} else if((numero01 != numero02) ||(numero01 != numero03) || (numero02 != numero03)){
-    console.log(`O triângulo escaleno`)
-} else if(numero01 < 0 || numero02 < 0 || numero03 < 0){
-    console.log(`Não pode receber valores negativos`)
-} else if(numero01 < numero02 + numero03 || numero02 < numero01 + numero03 || numero03 < numero01 + numero02) {
+if (numero01 + numero02 > numero03 && numero02 + numero03 > numero01 && numero03 + numero01 > numero02) {
+    if (numero01 === numero02 && numero02 === numero03) {
+        console.log(`O triângulo é equilátero`)
+    } else if ((numero01 === numero02) || (numero01 === numero03) || (numero02 == numero03)) {
+        console.log(`O triângulo é isóscele`)
+    } else {
+        console.log(`O triângulo escaleno`)
+    } 
+    } else {
     console.log(`Não é um triângulo`)
-}
+    }
+
+
+
 
 
 

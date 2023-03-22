@@ -130,46 +130,51 @@ Encerre a entrada de dados quando for digitada uma idade negativa
 
 let salarioTotal = 0
 let habitantes = 0
-let maiorIdade = 9999
-let menorIdade = 0
-let qtdMulheresSalarioAte100 = 0
+let maiorIdade = +Infinity
+let menorIdade = -Infinity
+let salarioMulheres = 0
 
+habitantes = parseInt(prompt(`Informe a quantidade de habitantes: `))
 
-let idade = parseInt(prompt("Digite a idade:"))
+for (let i = 0; i < habitantes; i++) {
+    let idade = parseInt(prompt(`Digite a idade do habitante ${i}:`))
 
-let sexo = parseInt(prompt("Digite o sexo (0 para masculino e 1 para feminino):"))
-sexo = `1` ? `feminino` : `masculino`
+    if (idade > maiorIdade) {
+        maiorIdade = idade
+    }
 
-if (sexo != 1 || 2) {
-    console.log(`ERROR`)
+    if (idade < menorIdade) {
+        menorIdade = idade
+    }
+}
+
+//fazer um loop de sexo baseado na quantidade de habitantes
+let sexo = parseInt(prompt(`Digite o sexo (0 para masculino e 1 para feminino): `))
+
+if(sexo === 1) {
+    sexo = `Feminino`
+} else {
+    sexo = `Masculino`
+}
+
+//ajustar o if do sexo masculino e feminino
+if (sexo === 1 && salario <= 100) {
+    salarioMulheres++
 }
 
 let salario = parseFloat(prompt(`Informe o salário: `));
-
 
 salarioTotal += salario;
 
 habitantes++;
 
-if (idade > maiorIdade) {
-    maiorIdade = idade
-}
-
-if (idade < menorIdade) {
-    menorIdade = idade
-}
-
-if (sexo === 1 && salario <= 100) {
-    qtdMulheresSalarioAte100++
-}
-
-
 let mediaSalarios = salarioTotal / habitantes;
 
-console.log(`Média de salário do grupo: R$${mediaSalarios.toFixed(2)}`);
-console.log(`Maior idade do grupo: ${maiorIdade} anos`);
-console.log(`Menor idade do grupo: ${menorIdade} anos`);
-console.log(`Quantidade de mulheres com salário até R$100,00: ${qtdMulheresSalarioAte100}`);
+console.log(`Média de salário do grupo: R$${mediaSalarios.toFixed(2)}`)
+console.log(`Maior idade do grupo: ${maiorIdade} anos`)
+console.log(`Menor idade do grupo: ${menorIdade} anos`)
+console.log(`Quantidade de mulheres com salário até R$100,00: ${salarioMulheres}`)
+
 
 
 

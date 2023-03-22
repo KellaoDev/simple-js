@@ -120,11 +120,6 @@ console.log(contaCompleta)
 */
 
 
-
-
-
-
-
 /*Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (0 para masculino e 1
 para feminino) e salário. Faça um algoritmo que informe:
 a) a média de salário do grupo;
@@ -132,6 +127,63 @@ b) a maior e a menor idade do grupo;
 c) a quantidade de mulheres com salário até R$100,00.
 Encerre a entrada de dados quando for digitada uma idade negativa
 */
+
+let salarioTotal = 0
+let habitantes = 0
+let maiorIdade = 9999
+let menorIdade = 0
+let qtdMulheresSalarioAte100 = 0
+
+
+let idade = parseInt(prompt("Digite a idade:"))
+
+let sexo = parseInt(prompt("Digite o sexo (0 para masculino e 1 para feminino):"))
+sexo = `1` ? `feminino` : `masculino`
+
+if (sexo != 1 || 2) {
+    console.log(`ERROR`)
+}
+
+let salario = parseFloat(prompt(`Informe o salário: `));
+
+
+salarioTotal += salario;
+
+habitantes++;
+
+if (idade > maiorIdade) {
+    maiorIdade = idade
+}
+
+if (idade < menorIdade) {
+    menorIdade = idade
+}
+
+if (sexo === 1 && salario <= 100) {
+    qtdMulheresSalarioAte100++
+}
+
+
+let mediaSalarios = salarioTotal / habitantes;
+
+console.log(`Média de salário do grupo: R$${mediaSalarios.toFixed(2)}`);
+console.log(`Maior idade do grupo: ${maiorIdade} anos`);
+console.log(`Menor idade do grupo: ${menorIdade} anos`);
+console.log(`Quantidade de mulheres com salário até R$100,00: ${qtdMulheresSalarioAte100}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*Escreva um programa que leia uma frase e mostre quantas letras “a” ou “A” foram digitadas*/
 

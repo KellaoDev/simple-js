@@ -58,12 +58,9 @@ if (numero01 + numero02 > numero03 && numero02 + numero03 > numero01 && numero03
 
 //Exercicio05
 /*
-const vetor = [321, 432, 12, 1, 32 ,32]
-
-vetor.sort()
-for(let i = 0; i < vetor.length; i++) {
-    console.log(vetor[i])
-}
+const vetor = [8, 5, 2]
+vetor.sort((a, b) => a - b)
+console.log(vetor)
 */
 
 //Exercicio06
@@ -119,78 +116,64 @@ let contaCompleta = (`000000` + contas.toString()).slice(-6) + `-` + digitoD.toS
 console.log(contaCompleta)
 */
 
+//Exercicio 09
+/*
+let grupo = parseInt(prompt(`Informe a quantidade de pessoas do grupo: `))
+let idade
+let sexo
+let salario
+let maiorIdade = Number(-Infinity)
+let menorIdade = Number(+Infinity)
+let qtdMulheres = 0
 
-/*Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (0 para masculino e 1
-para feminino) e salário. Faça um algoritmo que informe:
-a) a média de salário do grupo;
-b) a maior e a menor idade do grupo;
-c) a quantidade de mulheres com salário até R$100,00.
-Encerre a entrada de dados quando for digitada uma idade negativa
-*/
+for (let i = 0; i < grupo; i++) {
+    idade = parseInt(prompt(`Informe a idade do habitante(${i}): `))
+    sexo = parseInt(prompt(`Informe o sexo do habitante(${i}): `))
+    salario = parseFloat(prompt(`Informe o seu salário: `))
 
-let salarioTotal = 0
-let habitantes = 0
-let maiorIdade = +Infinity
-let menorIdade = -Infinity
-let salarioMulheres = 0
-
-habitantes = parseInt(prompt(`Informe a quantidade de habitantes: `))
-
-for (let i = 0; i < habitantes; i++) {
-    let idade = parseInt(prompt(`Digite a idade do habitante ${i}:`))
-
-    if (idade > maiorIdade) {
+    if (menorIdade > idade) {
+        menorIdade = idade
+    }
+    if (maiorIdade < idade) {
         maiorIdade = idade
     }
 
-    if (idade < menorIdade) {
-        menorIdade = idade
+    if (sexo === `1` && salario < 100.00) {
+        qtdMulheres++
     }
 }
 
-//fazer um loop de sexo baseado na quantidade de habitantes
-let sexo = parseInt(prompt(`Digite o sexo (0 para masculino e 1 para feminino): `))
+let media = salario / grupo
+console.log(``)
+console.log(`A média de salário do grupo é: ${media.toFixed(2)}`)
+console.log(`A maior idade do grupo é: ${maiorIdade}`)
+console.log(`A menor idade do grupo é: ${menorIdade}`)
+console.log(`Quantidade de mulheres com salário até 100.00: ${qtdMulheres}`)
+*/
 
-if(sexo === 1) {
-    sexo = `Feminino`
+//Exercicio 10
+/*
+const frase = String(prompt(`Informe uma frase: `))
+let verificarFrase = 0
+
+for(let i = 0; i < frase.length; i++) {
+    if(frase[i] === `a` || frase[i] === `A`) {
+        verificarFrase++
+    }
+}
+*/
+
+//Exercicio 11
+/*
+let string = String(prompt(`Informe uma string: `))
+let posicao = string.indexOf(`j`)
+
+if (string.includes(`j`)) {
+    console.log(`A letra 'j' existe na posição ${posicao}`)
 } else {
-    sexo = `Masculino`
+    console.log(`A letra 'j' não foi encontrada na string`)
 }
+*/
 
-//ajustar o if do sexo masculino e feminino
-if (sexo === 1 && salario <= 100) {
-    salarioMulheres++
-}
+//By Kellao
 
-let salario = parseFloat(prompt(`Informe o salário: `));
-
-salarioTotal += salario;
-
-habitantes++;
-
-let mediaSalarios = salarioTotal / habitantes;
-
-console.log(`Média de salário do grupo: R$${mediaSalarios.toFixed(2)}`)
-console.log(`Maior idade do grupo: ${maiorIdade} anos`)
-console.log(`Menor idade do grupo: ${menorIdade} anos`)
-console.log(`Quantidade de mulheres com salário até R$100,00: ${salarioMulheres}`)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Escreva um programa que leia uma frase e mostre quantas letras “a” ou “A” foram digitadas*/
-
-/*Codifique um programa que leia uma string e mostre se existe a letra ‘j’ nessa string. Caso exista, mostre qual é a posição
-da primeira ocorrência desse caractere*/

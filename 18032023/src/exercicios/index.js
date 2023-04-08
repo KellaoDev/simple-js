@@ -118,49 +118,57 @@ console.log(contaCompleta)
 
 //Exercicio 09
 /*
-let grupo = parseInt(prompt(`Informe a quantidade de pessoas do grupo: `))
-let idade
-let sexo
-let salario
+let somaSalario = 0
+let contHab = 0
 let maiorIdade = Number(-Infinity)
 let menorIdade = Number(+Infinity)
-let qtdMulheres = 0
+let qtdMulheresSalarioAte100 = 0
 
-for (let i = 0; i < grupo; i++) {
-    idade = parseInt(prompt(`Informe a idade do habitante(${i}): `))
-    sexo = parseInt(prompt(`Informe o sexo do habitante(${i}): `))
-    salario = parseFloat(prompt(`Informe o seu salário: `))
-
-    if (menorIdade > idade) {
-        menorIdade = idade
-    }
-    if (maiorIdade < idade) {
-        maiorIdade = idade
-    }
-
-    if (sexo === `1` && salario < 100.00) {
-        qtdMulheres++
-    }
+while (true) {
+  const idade = prompt(`Informe a idade do habitante (Um número negativo para encerrar):`)
+  
+  if (idade < 0) {
+    break
+  }
+  
+  const sexo = prompt(`Informe o sexo do habitante (0 para masculino, 1 para feminino):`)
+  const salario = prompt(`Informe o salário do habitante:`)
+  
+  somaSalario += parseFloat(salario)
+  contHab++
+  
+  if (idade > maiorIdade) {
+    maiorIdade = idade
+  }
+  
+  if (idade < menorIdade) {
+    menorIdade = idade
+  }
+  
+  if (sexo == 1 && salario <= 100) {
+    qtdMulheresSalarioAte100++
+  }
 }
 
-let media = salario / grupo
-console.log(``)
-console.log(`A média de salário do grupo é: ${media.toFixed(2)}`)
-console.log(`A maior idade do grupo é: ${maiorIdade}`)
-console.log(`A menor idade do grupo é: ${menorIdade}`)
-console.log(`Quantidade de mulheres com salário até 100.00: ${qtdMulheres}`)
+const mediaSalario = somaSalario / contHab
+
+console.log(`Média de salário do grupo: R$ ${mediaSalario.toFixed(2)}`)
+console.log(`Maior idade do grupo: ${maiorIdade} anos`)
+console.log(`Menor idade do grupo: ${menorIdade} anos`)
+console.log(`Quantidade de mulheres com salário até R$ 100.00: ${qtdMulheresSalarioAte100}`)
 */
 
 //Exercicio 10
 /*
 const frase = String(prompt(`Informe uma frase: `))
-let verificarFrase = 0
+let contador = 0
 
-for(let i = 0; i < frase.length; i++) {
-    if(frase[i] === `a` || frase[i] === `A`) {
-        verificarFrase++
+for (let i = 0; i < frase.length; i++) {
+    if (frase[i] === `a` || frase[i] === `A`) {
+        contador++
     }
 }
+console.log(`Foram Digitas ${contador} letras "a" ou "A"`)
 */
 
 //Exercicio 11
